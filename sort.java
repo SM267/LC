@@ -13,7 +13,7 @@ class sort
         low=0;
         mid=0;
         high=n-1;
-        while(low<=high){
+        while(mid <= high){
             if(arr[mid]==0){
                 swap(arr,low,mid);
                 mid++;
