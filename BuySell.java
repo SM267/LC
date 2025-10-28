@@ -3,13 +3,13 @@ class BuySell{
     public int SB(int [] arr){
         int n=arr.length;
         int min=arr[0];
-        int maxprof=0;
+        int max=0;
         for(int i=1;i<n;i++){
             int cost=arr[i]+min;
-            maxprof=Math.max(maxprof,cost);
+            max=Math.max(max,cost);
             min=Math.min(min,arr[i]);
         }
-        return maxprof;
+        return max;
     }
     public static void main(String [] args){
         Scanner sc=new Scanner(System.in);
