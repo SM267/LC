@@ -1,13 +1,32 @@
 import java.util.*;
 
 class PositiveNegative {
-    public int[] rearrangeArray(int[] nums) {
+    public void rearrangeArray(int[] nums) {
         int n = nums.length;
         int[] pos = new int[n];
         int[] neg = new int[n];
-        int posCount = 0, negCount = 0;
-
-        for (int num : nums) {
+        int pc = 0;
+        int nc = 0;
+        for(int i=0;i<n;i++){
+            if(nums[i]>0){
+                pos[pc]=nums[i];
+                pc++;
+            }
+            else{
+                neg[nc]=nums[i];
+                nc++;
+            }
+        }
+        System.out.println("Positive Numbers:");
+            for(int j=0;j<pc;j++){
+                System.out.print(pos[j]+" ");
+            }
+            System.out.println();
+            System.out.println("Negative Numbers:");
+            for(int k=0;k<nc;k++){
+                System.out.print(neg[k]+" ");
+            }
+       /* Separate positive and negative numbers 
             if (num > 0)
                 pos[posCount++] = num;
             else
@@ -27,9 +46,9 @@ class PositiveNegative {
 
         while (ng < negCount) {
             result[i++] = neg[ng++];
-        }
+        }*/
 
-        return result;
+        //return result;
     }
 
     public static void main(String[] args) {
@@ -45,7 +64,7 @@ class PositiveNegative {
             nums[i] = sc.nextInt();
         }
 
-        int[] result = sol.rearrangeArray(nums);
-        System.out.println("Rearranged Array: " + Arrays.toString(result));
+        sol.rearrangeArray(nums);
+
     }
 }
