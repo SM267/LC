@@ -13,7 +13,6 @@ class PositiveNegative {
             else
                 neg[negCount++] = num;
         }
-
         int[] result = new int[n];
         int i = 0, p = 0, ng = 0;
 
@@ -48,7 +47,5 @@ class PositiveNegative {
 
         int[] result = sol.rearrangeArray(nums);
         System.out.println("Rearranged Array: " + Arrays.toString(result));
-
-        sc.close();
     }
 }
