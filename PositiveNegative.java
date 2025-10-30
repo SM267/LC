@@ -50,6 +50,24 @@ class PositiveNegative {
 
         //return result;
     }
+    /*class Solution {
+    public int[] rearrangeArray(int[] nums) {
+        int n=nums.length;
+        int pi=0,ni=1;
+        int[] res=new int[n];
+        for(int num:nums){
+            if(num>0){
+                res[pi]=num;
+                pi+=2;
+            }
+            else{
+                res[ni]=num;
+                ni+=2;
+            }
+        }
+        return res;
+    }
+} */
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
