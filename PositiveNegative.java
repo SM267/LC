@@ -26,7 +26,59 @@ class PositiveNegative {
             for(int k=0;k<nc;k++){
                 System.out.print(neg[k]+" ");
             }
-       /* Separate positive and negative numbers 
+        int i=0,j=0,k=0;
+        int[] a=new int[n];
+        while(k<pc && j<nc){
+            a[i]=pos[k];
+            i++;
+            k++;
+            a[i]=neg[j];
+            i++;
+            j++;
+        }
+        while(k<pc){
+            a[i]=pos[k];
+            i++;
+            k++;
+        }
+        while(j<nc){
+            a[i]=neg[j];
+            i++;
+            j++;
+        }
+        System.out.println();
+        System.out.println("Rearranged Array:");
+        for(i=0;i<n;i++){
+            System.out.print(a[i]+" ");
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        PositiveNegative sol = new PositiveNegative();
+
+        System.out.print("Enter number of elements: ");
+        int n = sc.nextInt();
+
+        int[] nums = new int[n];
+        System.out.println("Enter " + n + " integers (positive and negative):");
+        for (int i = 0; i < n; i++) {
+            nums[i] = sc.nextInt();
+        }
+
+        sol.rearrangeArray(nums);
+
+    }
+}
+        /* System.out.println("Positive Numbers:");
+            for(int j=0;j<pc;j++){
+                System.out.print(pos[j]+" ");
+            }
+            System.out.println();
+            System.out.println("Negative Numbers:");
+            for(int k=0;k<nc;k++){
+                System.out.print(neg[k]+" ");
+            }
+        Separate positive and negative numbers 
             if (num > 0)
                 pos[posCount++] = num;
             else
@@ -49,7 +101,7 @@ class PositiveNegative {
         }*/
 
         //return result;
-    }
+   // }
     /*class Solution {
     public int[] rearrangeArray(int[] nums) {
         int n=nums.length;
@@ -67,22 +119,4 @@ class PositiveNegative {
         }
         return res;
     }
-} */
-
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        PositiveNegative sol = new PositiveNegative();
-
-        System.out.print("Enter number of elements: ");
-        int n = sc.nextInt();
-
-        int[] nums = new int[n];
-        System.out.println("Enter " + n + " integers (positive and negative):");
-        for (int i = 0; i < n; i++) {
-            nums[i] = sc.nextInt();
-        }
-
-        sol.rearrangeArray(nums);
-
-    }
-}
+    } */
