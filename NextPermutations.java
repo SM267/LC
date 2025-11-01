@@ -1,20 +1,12 @@
 import java.util.*;
+
 public class NextPermutations {
     public void nextPermutation(int[] nums) {
         int n = nums.length;
         int i = n - 2;
-        while (i >= 0 && nums[i] >= nums[i + 1]) {
-            i--;
-        }
-        if (i >= 0) {
-            int j = n - 1;
-            while (nums[j] <= nums[i]) {
-                j--;
-            }
-            swap(nums, i, j);
-        }
-        reverse(nums, i + 1, n - 1);
+
     }
+
     private void swap(int[] nums, int i, int j) {
         int temp = nums[i];
         nums[i] = nums[j];
@@ -28,9 +20,10 @@ public class NextPermutations {
             end--;
         }
     }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Solution sol = new Solution();
+        NextPermutations np = new NextPermutations();
 
         System.out.print("Enter the size of array: ");
         int n = sc.nextInt();
@@ -40,9 +33,7 @@ public class NextPermutations {
         for (int k = 0; k < n; k++) {
             nums[k] = sc.nextInt();
         }
-        sol.nextPermutation(nums);
-
+        np.nextPermutation(nums);
         System.out.println("Next permutation: " + Arrays.toString(nums));
-        sc.close();
     }
 }
