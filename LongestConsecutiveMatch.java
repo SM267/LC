@@ -3,35 +3,20 @@ import java.util.*;
 public class LongestConsecutiveMatch {
     public int findLongestConsecutive(int[] nums) {
         int n = nums.length;
-        if (n == 0)
-            return 0;
-
-        int maxCount = 0;
-
-        for (int i = 0; i < n; i++) {
-            int x = nums[i];
-            if (!ls(nums, x - 1)) {
-                int currentCount = 1;
-                while (ls(nums, x + 1)) {
-                    x = x + 1;
-                    currentCount++;
-                }
-                if (currentCount > maxCount) {
-                    maxCount = currentCount;
-                }
+        Arrays.sort(nums);
+        int count = 1;
+        int longest = 1;
+        for (int i = 0; i < n - 1; i++) {
+            if (nums[i + 1] == nums[i]) {
+                continue;
+            } else if (nums[i + 1] == nums[i] + 1) {
+                count++;
+            } else {
+                count = 1;
             }
+            longest = Math.max(longest, count);
         }
-
-        return maxCount;
-    }
-
-    public boolean ls(int[] nums, int target) {
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == target) {
-                return true;
-            }
-        }
-        return false;
+        return longest;
     }
 
     public static void main(String[] args) {
