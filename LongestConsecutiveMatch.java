@@ -2,19 +2,23 @@ import java.util.*;
 
 public class LongestConsecutiveMatch {
     public int findLongestConsecutive(int[] nums) {
-        int n = nums.length;
-        Arrays.sort(nums);
-        int count = 1;
+        if (nums.length == 0)
+            return 0;
         int longest = 1;
-        for (int i = 0; i < n - 1; i++) {
-            if (nums[i + 1] == nums[i]) {
-                continue;
-            } else if (nums[i + 1] == nums[i] + 1) {
-                count++;
-            } else {
-                count = 1;
+        HashSet<Integer> set = new HashSet<>();
+        for (int num : nums) {
+            set.add(num);
+        }
+        for (int nn : set) {
+            if (!set.contains(nn - 1)) {
+                int count = 1;
+                int cn = nn;
+                while (set.contains(cn + 1)) {
+                    cn++;
+                    count++;
+                }
+                longest = Math.max(longest, count);
             }
-            longest = Math.max(longest, count);
         }
         return longest;
     }
@@ -36,3 +40,22 @@ public class LongestConsecutiveMatch {
         System.out.println("Length of longest consecutive sequence: " + length);
     }
 }
+
+/*
+ * int n = nums.length;
+ * Arrays.sort(nums);
+ * int count = 1;
+ * int longest = 1;
+ * for (int i = 0; i < n - 1; i++) {
+ * if (nums[i + 1] == nums[i]) {
+ * continue;
+ * } else if (nums[i + 1] == nums[i] + 1) {
+ * count++;
+ * } else {
+ * count = 1;
+ * }
+ * longest = Math.max(longest, count);
+ * }
+ * return longest;
+ * }
+ */
