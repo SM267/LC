@@ -3,35 +3,38 @@ import java.util.Scanner;
 //import static java.lang.classfile.TypeKind.INT;
 //import static sun.nio.cs.Surrogate.MIN;
 
-class MajoritySumNext{
-    /*public int maxSubArray(int[] nums) {
-        int n=nums.length;
-        int sum;
-        int maxi=0;
-        for(int i=0;i<n;i++){
-            sum=0;
-            for(int j=i;j<n;j++){
-                sum=sum+nums[j];
-                maxi=Math.max(maxi,sum);
+class MajoritySumNext {
+    /*
+     * public int maxSubArray(int[] nums) {
+     * int n=nums.length;
+     * int sum;
+     * int max=0;
+     * for(int i=0;i<n;i++){
+     * sum=0;
+     * for(int j=i;j<n;j++){
+     * sum=sum+nums[j];
+     * maxi=Math.max(maxi,sum);
+     * }
+     * }
+     * return max;
+     * }
+     */
+    public int maxSubArray(int[] nums) {
+        int n = nums.length;
+        int maxi = Integer.MIN_VALUE;
+        int sum = 0;
+        for (int i = 0; i < n; i++) {
+            sum += nums[i];
+            if (sum > maxi) {
+                maxi = sum;
             }
-        }
-        return maxi;
-    } */
-    public int maxSubArray(int[] nums){
-        int n=nums.length;
-        int maxi=Integer.MIN_VALUE;
-        int sum=0;
-        for(int i=0;i<n;i++){
-            sum+=nums[i];
-            if(sum>maxi){
-                maxi=sum;
-            }
-            if(sum<0){
-                sum=0;
+            if (sum < 0) {
+                sum = 0;
             }
         }
         return maxi;
     }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
