@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class SpiralMatrix {
-    public void sm(int[][] arr){
+    public List<Integer> sm(int[][] arr){
         List<Integer> l=new ArrayList<>();
         int m=arr.length;
         int n=arr[0].length;
@@ -28,6 +28,7 @@ public class SpiralMatrix {
                 left++;
             }
         }
+        return l;
     }
     /*public void sm(int[][] arr){
         List<Integer> l=new ArrayList<>();
