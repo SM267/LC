@@ -1,0 +1,39 @@
+import java.util.*;
+
+public class TwoSum2 {
+    public int sum(int[] nums,int target){
+        int n=nums.length;
+        int s=n-1;
+        Arrays.sort(nums);
+        for(int i=0;i<n;i++){
+                if(nums[i]+nums[s]>target){
+                    s--;
+                }
+                else if(nums[i]+nums[s]<target){
+                    i++;
+                }
+                else{
+                    System.out.println(+i+","+s);
+                    
+                }
+        }
+        return -1;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] nums = new int[n];
+        for (int i = 0; i < n; i++) {
+            nums[i] = sc.nextInt();
+        }
+        int target = sc.nextInt();
+        TwoSum2 ts = new TwoSum2();
+        int[] result = ts.sum(nums, target);
+        if (result != -1) {
+            System.out.println("Indices: " + result[0] + " " + result[1]);
+        } else {
+            System.out.println("No two sum solution");
+        }
+    }
+}
