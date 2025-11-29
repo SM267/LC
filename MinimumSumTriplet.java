@@ -48,3 +48,35 @@ public class MinimumSumTriplet {
         System.out.println(d);
     }
 }
+/*class Solution {
+    public int minimumSum(int[] nums) {
+        int n = nums.length;
+        int ans = Integer.MAX_VALUE;
+
+        for (int j = 1; j < n - 1; j++) {
+            int leftMin = Integer.MAX_VALUE;
+            for (int i = 0; i < j; i++) {
+                if (nums[i] < nums[j] && nums[i] < leftMin) {
+                    leftMin = nums[i];
+                }
+            }
+            if (leftMin == Integer.MAX_VALUE) continue;
+
+            int rightMin = Integer.MAX_VALUE;
+            for (int k = j + 1; k < n; k++) {
+                if (nums[k] < nums[j] && nums[k] < rightMin) {
+                    rightMin = nums[k];
+                }
+            }
+            if (rightMin == Integer.MAX_VALUE) continue;
+
+            int sum = leftMin + nums[j] + rightMin;
+            if (sum < ans) {
+                ans = sum;
+            }
+        }
+
+        return ans == Integer.MAX_VALUE ? -1 : ans;
+    }
+}
+ */
