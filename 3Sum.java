@@ -1,6 +1,6 @@
 //public class 3Sum{
 
-//}
+}
 /*BRUTE force approach
  * 
  * 
