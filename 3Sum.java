@@ -1,7 +1,7 @@
 //public class 3Sum{
 
 }
-/*BRUTE force approach
+*BRUTE force approach
  * 
  * 
 class Solution {
