@@ -1,0 +1,21 @@
+class Solution {
+    public int[] productExceptSelf(int[] nums) {
+        int pr=1;
+        int pr1=1;
+        int n=nums.length;
+        int[] arr= new int[n];
+        for(int i=0;i<n;i++){
+            pr=1;
+            pr1=1;
+        for(int k=i-1;k>=0;k--){
+            pr=pr*(nums[k]);
+        }
+        for(int j=i+1;j<n;j++){
+            pr1=pr1*(nums[j]);
+        }
+        int p=pr1*pr;
+        arr[i]=p;
+        }
+        return arr;
+    }
+}
