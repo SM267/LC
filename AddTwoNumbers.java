@@ -1,1 +1,2 @@
-//code for adding 2 numbers
+//adding 2 numbers
+
