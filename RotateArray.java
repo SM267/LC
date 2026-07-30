@@ -1,43 +1,43 @@
-import java.util.Arrays;
-import java.util.Scanner;
-
-public class RotateArray {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter the size of the array: ");
-        int n = sc.nextInt();
-
-        int[] nums = new int[n];
-        System.out.println("Enter " + n + " elements:");
-        for (int i = 0; i < n; i++) {
-            nums[i] = sc.nextInt();
+    import java.util.*;
+    public class RotateArray{
+        public void swap(int[] arr, int i, int j) {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
         }
-
-        System.out.print("Enter k (number of rotations): ");
-        int k = sc.nextInt();
-
-        Solution sol = new Solution();
-        sol.rotate(nums, k);
-
-        System.out.println("Rotated array: " + Arrays.toString(nums));
-        sc.close();
-    }
-}
-
-class Solution {
-    public void rotate(int[] nums, int k) {
-        int n = nums.length;
-        k = k % n;
-
-        int[] result = new int[n];
-
-        for (int i = 0; i < n; i++) {
-            result[(i + k) % n] = nums[i];
+        public void rotarr(int[] arr,int n){
+            int right=n-1;
+            while(right>0){
+                swap(arr,right,right-1);
+                right--;
+            }
+            for (int j = 0; j < n; j++) {
+            System.out.print(arr[j] + " ");
+            }
         }
-
-        for (int i = 0; i < n; i++) {
-            nums[i] = result[i];
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            int n = sc.nextInt();
+            int[] arr = new int[n];
+            for (int i = 0; i < n; i++) {
+                arr[i] = sc.nextInt();
+            }
+            RotateArray array1 = new RotateArray();
+            array1.rotarr(arr, n);
         }
     }
-}
+    /*
+    Brute FOrce Approach by replacing elements
+    public void rotarr(int[] arr,int n){
+            int i=n-1;
+            int last=arr[n-1];
+            while(i>0){
+                arr[i]=arr[i-1];
+                i--;
+            }
+            arr[0]=last;
+            for (int j = 0; j < n; j++) {
+            System.out.print(arr[j] + " ");
+            }
+        }
+    */
