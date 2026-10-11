@@ -5,12 +5,18 @@
             arr[i] = arr[j];
             arr[j] = temp;
         }
-        public void rotarr(int[] arr,int n){
-            int right=n-1;
-            while(right>0){
-                swap(arr,right,right-1);
-                right--;
+        public void reverse(int[] arr,int l,int r){
+            while(l<r){
+                int temp=arr[l];
+                arr[l]=arr[r];
+                arr[r]=temp;
+                l++;
+                r--;
             }
+        }
+        public void rotarr(int[] arr,int n){
+            reverse(arr,0,n-1);
+            reverse(arr,1,n-1);
             for (int j = 0; j < n; j++) {
             System.out.print(arr[j] + " ");
             }
@@ -41,3 +47,20 @@
             }
         }
     */
+   /*
+   public void swap(int[] arr, int i, int j) {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+        public void rotarr(int[] arr,int n){
+            int right=n-1;
+            while(right>0){
+                swap(arr,right,right-1);
+                right--;
+            }
+            for (int j = 0; j < n; j++) {
+            System.out.print(arr[j] + " ");
+            }
+        }
+     */
