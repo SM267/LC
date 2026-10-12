@@ -28,3 +28,35 @@ class Solution {
         return res;
     }
 }
+
+/*
+    FOR LOOP VERSION:
+
+class Solution {
+    public int longestOnes(int[] nums, int k) {
+        int l = 0;
+        int res = 0;
+        int count0 = 0;
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] == 0) {
+                count0++;
+            }
+
+            if (count0 <= k) {
+                res = Math.max(res, i - l + 1);
+            } else {
+                while (count0 > k) {
+                    if (nums[l] == 0) {
+                        count0--;
+                    }
+                    l++;
+                }
+            }
+        }
+
+        return res;
+    }
+}
+
+*/
